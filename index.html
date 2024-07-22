@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+        .yes {
+            background-color: green;
+        }
+        .no {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Does Murjak love you?</h1>
+    <button class="button yes" onclick="showAnswer('yes')">Yes</button>
+    <button class="button no" onclick="showAnswer('no')">No</button>
+    <p id="answer"></p>
+
+    <script>
+        let yesCount = 0;
+
+        function showAnswer(choice) {
+            if (choice === 'yes') {
+                yesCount++;
+                document.getElementById('answer').innerText = `Murjak loves you${' very'.repeat(yesCount)} much.`;
+            } else {
+                document.getElementById('answer').innerText = "You are wrong; he does love you. You are just being silly.";
+            }
+        }
+    </script>
+</body>
+</html>
